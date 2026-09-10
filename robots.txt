@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /__test_contact_modal.html
+Disallow: /modulo/
+Disallow: /scripts/
+Sitemap: https://lc.com.pe/sitemap.xml

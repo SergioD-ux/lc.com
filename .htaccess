@@ -1,0 +1,17 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^services/(index|about|services|team|contacto)\.html$ /$1.html [R=301,L]
+RewriteRule ^(?:scripts|\.openai|\.git|dist|release)/ - [F,L]
+RewriteRule ^__test_contact_modal\.html$ /contacto.html [R=301,L]
+</IfModule>
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+<FilesMatch "\.(md|py|mjs|json|log)$">
+Require all denied
+</FilesMatch>
